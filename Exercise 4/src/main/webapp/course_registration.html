@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Registration Form</title>
+</head>
+<body>
+    <h2>Course Registration Form</h2>
+    <form action="CourseRegistrationServlet" method="post">
+        <label for="name">Student Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="rollno">Roll No:</label>
+        <input type="text" id="rollno" name="rollno" required><br><br>
+
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="Male" required> Male
+        <input type="radio" name="gender" value="Female" required> Female<br><br>
+
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year" required><br><br>
+
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" required><br><br>
+
+        <label for="section">Section:</label>
+        <input type="text" id="section" name="section" required><br><br>
+
+        <label for="mobile_no">Mobile No:</label>
+        <input type="text" id="mobile_no" name="mobile_no" required><br><br>
+
+        <label for="email">E-Mail ID:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="3" required></textarea><br><br>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br><br>
+
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" required><br><br>
+
+        <label for="pincode">Pincode:</label>
+        <input type="text" id="pincode" name="pincode" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

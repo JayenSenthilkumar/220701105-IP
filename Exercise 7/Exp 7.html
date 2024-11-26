@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details Fetcher</title>
+    <script>
+        function fetchStudentDetails() {
+            const regNo = document.getElementById('studentRegNo').value;
+            if (regNo) {
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', 'StudentDetailsServlet?regNo=' + regNo, true);
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        const student = JSON.parse(xhr.responseText);
+                        document.getElementById('studentDetails').innerHTML = `
+                            <h3>Student Details:</h3>
+                            <p><strong>Registration No:</strong> ${student.reg_no}</p>
+                            <p><strong>Name:</strong> ${student.name}</p>
+                            <p><strong>Age:</strong> ${student.age}</p>
+                            <p><strong>Course:</strong> ${student.course}</p>
+                        `;
+                    } else {
+                        document.getElementById('studentDetails').innerHTML = 'Error fetching student details.';
+                    }
+                };
+                xhr.send();
+            } else {
+                document.getElementById('studentDetails').innerHTML = '';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Select Student Registration Number</h1>
+    <select id="studentRegNo" onchange="fetchStudentDetails()">
+        <option value="">Select a student</option>
+        <option value="S001">S001</option>
+        <option value="S002">S002</option>
+        <option value="S003">S003</option>
+    </select>
+
+    <div id="studentDetails"></div>
+</body>
+</html>

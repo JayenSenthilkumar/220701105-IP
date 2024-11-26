@@ -1,0 +1,149 @@
+body{
+    margin: 0px;
+    padding: 0;
+}
+header{
+    border: 0px solid black;
+    text-align: center;
+    font-weight: 150px;
+    background-color: rgb(107, 2, 107);
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    height: 70%;
+    margin: 0px;
+    padding: 10px;
+    background: linear-gradient(to right, rgb(29,8,29) 15%,rgb(107, 2, 107) 55%,rgb(29,8,29) 85%);
+    }
+h1{
+    font-weight: lighter;
+    font-size: 24px;
+    margin: 1px;
+    padding: 4px 0px;
+ }
+.a{
+    color: rgb(5, 5, 234);
+    font-size: 22px;
+    text-align: right;
+    margin-right: 51px;
+    font-weight: bold;
+}
+
+span{
+    background-color: blue;
+}
+
+.main{
+    display: flex;
+    height: 100%;
+}
+.nav{
+    background-color: rgb(227, 227, 227);
+    margin-left: 30px;
+    margin-top: 30px;
+}
+ul{
+    
+    list-style-type: none;
+    width: 300px;
+    height: 520px;
+    line-height: 40px;
+    padding: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+li{
+    color: black;
+    list-style: none;
+}
+
+li a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    font-size: 25px;
+}
+.wel{
+    margin: 20px;
+    width: 100%;
+    padding: 10px;
+}
+
+a:hover{
+    color: white;
+    transition-duration: 0.2s;
+}
+
+a:active{
+    color: black;
+}
+#welcome{
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+}
+.intro{
+    margin-top: 30px;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+h2{
+    color: blue;
+}
+h5{
+    font-size: 20px;
+    font-weight: bold;
+}
+.intro-text{
+    font-size: 20px;
+    color: rgb(60, 60, 176);
+}
+h4{
+    font-size: 20px;
+    font-weight: lighter;
+}
+.oppo{
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 80px;
+    padding-left: 30px;
+    color: rgb(60, 60, 176);
+    line-height: 27px;
+}
+.fac{
+    width: 100%;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+table,th,tr,td{
+    background-color: rgb(187, 184, 184);
+    border: 2px groove rgb(148, 141, 141);
+    margin-top: 30px;
+    font-weight: 100;
+    font-size: 20px;
+    padding: 5px;
+    border-collapse: collapse;
+}
+.news{
+    width: 100%;
+    border: 2px solid black;
+}
+p{
+    color: rgb(60, 60, 176);
+    font-size: 19px;
+    font-weight: lighter;
+
+}
+
+@media only screen and (min-width: 768px) {
+    .main {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav {
+        width: 300px;
+    }
+}

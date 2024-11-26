@@ -1,0 +1,117 @@
+App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Welcome from './Welcome';
+import Signup from './Signup';
+import Login from './Login';
+
+const App = () => {
+ return (
+ <Router>
+ <Routes>
+ <Route exact path="/" element={<Login />} />
+<Route exact path="/Welcome" element={<Welcome />} />
+ <Route path="/Signup" element={<Signup />} />
+ </Routes>
+ </Router>
+ );
+};
+export default App;
+
+login.js
+import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, useNavigate, Routes } from 'react-router-dom';
+
+const Login = () => {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        if (username === 'rec' && password === 'rec123') {
+            navigate('/Welcome', { replace: true });
+        } else {
+            navigate('/Signup', { replace: true });
+        }
+    };
+    return (
+        <div>
+            <h1>Login</h1>
+            <div id="box">
+                <form autoComplete='off' onSubmit={handleFormSubmit}>
+                    Username:<br />
+                    <input type="text" required value={username} onChange={(e) => setUsername(e.target.value)}/><br /><br />
+                    Password:<br />
+                    <input type="password" required value={password} onChange={(e) => setPassword(e.target.value)}/><br /><br />
+                    <input type="submit" value="Login" />
+                </form>
+            </div>
+        </div>
+    );
+   };
+
+export default Login;
+
+Signup.js
+import './App.css';
+import { BrowserRouter as Router, Route, useNavigate, Routes } from 'react-router-dom';
+const Signup = () => {
+    const navigate = useNavigate();
+
+    const handleFormSubmit = (e) => {
+        navigate('/Welcome', { replace: true });
+    };
+    return (
+        <div>
+            <h1>Sign Up</h1>
+            <div id="box">
+                <form autoComplete="off" onSubmit={handleFormSubmit}>
+                    Username:<br />
+                    <input type="text" required /><br /><br />
+                    Email:<br />
+                    <input type="text" required /><br /><br />
+                    Password:<br />
+                    <input type="password" required /><br /><br />
+                    <input type="submit" value="Register" />
+                </form>
+            </div>
+        </div>
+    );
+};
+export default Signup;
+
+Welcome.js
+import React from 'react';
+    const Welcome = () => {
+        return (
+            <div>
+                <h1>Welcome to REC!</h1>
+            </div>
+        );
+    };
+export default Welcome;
+
+App.css
+#box{
+  border:2px solid black;
+  height:300px;
+  width:300px;
+  position:absolute;
+  left:470px;
+  top:150px;
+  font-size:20px;
+  padding:20px;
+}
+input[type="submit"]{
+  font-size:20px;
+}
+
+Index.js
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App';
+const root = document.getElementById('root');
+const reactRoot = createRoot(root);
+reactRoot.render(<App />);
